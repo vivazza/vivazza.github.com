@@ -249,6 +249,11 @@ bold {
 /*---------------------------------------
     Header
 ---------------------------------------*/
+.top-banner {
+  margin-top: -25px!important;
+  padding-bottom: 25px!important;
+  text-align: center;
+}
 
 #header a:hover {
     color: #a7a7a7;
