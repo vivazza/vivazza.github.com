@@ -1,0 +1,30 @@
+{% if site.google-analytics-tracking-id %}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ site.google-analytics-tracking-id }}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endif %}
+
+<div id="footer">
+<div class="inner">
+<div class="footer-top clearfix">
+	<div class="footer-partner"></div>
+</div>
+<div class="footer-bottom clearfix">
+<p class="left">&copy; Copyright 2016 VIVAZZA. All Rights Reserved. In Cooperation with <a target="_blank" href="http://www.hammershot.pw">HammerShot</a>.</p>
+<p class="right">An <a target="_blank" href="http://www.adstud.com">AdStud</a> Production <span class="slash">/</span> <a class="bold" target="_blank" href="https://www.facebook.com/Vivazza.Official">facebook</a> 1.6k+ <span class="slash">/</span> <a class="bold" target="_blank" href="https://www.instagram.com/vivazza_/">instagram</a> 3.4k+</p></div>
+</div>
+</div>
+</div>
+
+
+</div>
+</body>
+</html>

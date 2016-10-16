@@ -1,0 +1,69 @@
+{% include header.html %}
+<div id="content" class="clearfix">
+    <div id="primary">
+        <article>
+            <div class="article-head">
+                <span class="article-title">{{ page.location }}</span><span class="article-date slash"> <span class="slash">&mdash;</span> {{ page.date | date:"%B %e, %Y" }}</span>
+            </div>
+            <div class="images-container">
+                <div class="grid clearfix">
+                    {% for item in page.images %}
+                    <div class="grid-item {{ item.class }}">
+                        <img src="{{ site.baseurl }}images/{{ page.date | date: "%Y-%m-%d" }}/{{ item.name }}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="article-bottom">
+                <div class="products-container left">
+                    <div class="title">
+                        <h3>Products</h3></div>
+                    <div class="left products-margin">
+                        <ul class="product-type">
+                            {% for item in page.products %}
+                            <li>{{ item.kind }} <span class="slash"> &mdash; </span><a target="_blank" href="{{ item.link }}">{{ item.brand }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="description-container left">
+                    <div class="title">
+                        <h3>Why we love this outfit</h3></div>
+                    <p class="love">{{ page.whywelove }}</p>
+                </div>
+            </div>
+        </article>
+        <share-button></share-button>
+        <div id="disqus_thread" class="disqus_thread"></div>
+        <script>
+        /**
+         * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+         */
+
+        var disqus_config = function() {
+            this.page.url = 'http://www.vivazza.net{{ page.url }}'; // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '{{ page.identifier }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        var disqus_developer = 1; // Comment out when the site is live
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+
+            s.src = '//vivazza.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        <p class="pagination">
+            {% if page.previous.url %}
+            <a class="right" href="{{page.previous.url}}">Last Outfit&rarr;</a> {% else %}
+            <span class="right slash">Last Outfit&rarr;</span> {% endif %} {% if page.next.url %}
+            <a class="left" href="{{page.next.url}}">&larr;Next Outfit</a> {% else %}
+            <span class="left slash">&larr;Next Outfit</span> {% endif %}
+        </p>
+    </div>
+    {% include sidebar.html %} {% include footer.html %}
